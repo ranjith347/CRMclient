@@ -256,7 +256,7 @@ export default function Home() {
     </div>
         <div className="col-md-2">
           <form style={{padding: 0}}>
-              <h4>Details</h4>
+              <h4>New details</h4>
               <input type="text" class="form-control-sm" id="exampleInputEmail1" name="companyname" onChange={handleChange} placeholder="Company Name..." />
               <input type="text" class="form-control-sm" id="exampleInputtext1" name="companywebsite" onChange={handleChange} placeholder="Website..." />
               <input type="text" class="form-control-sm" id="exampleInputtext1" name="companyphonenumber" onChange={handleChange} placeholder="Phone no..." />
