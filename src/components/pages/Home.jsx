@@ -137,7 +137,7 @@ export default function Home() {
           })
         };
   
-        return <Button onClick={onClick}>Delete</Button>;
+        return <Button style={{color: 'red'}} onClick={onClick}>Delete</Button>;
       }
     },
     {
@@ -234,6 +234,7 @@ export default function Home() {
       >
         <Box sx={style}>
         <form style={{padding: 0}}>
+              <h4>Update details</h4>
               <input type="text" class="form-control-sm" id="exampleInputEmail1" name="companyname" onChange={handleChange} placeholder="Company Name..." />
               <input type="text" class="form-control-sm" id="exampleInputtext1" name="companywebsite" onChange={handleChange} placeholder="Website..." />
               <input type="text" class="form-control-sm" id="exampleInputtext1" name="companyphonenumber" onChange={handleChange} placeholder="Phone no..." />
@@ -255,6 +256,7 @@ export default function Home() {
     </div>
         <div className="col-md-2">
           <form style={{padding: 0}}>
+              <h4>Details</h4>
               <input type="text" class="form-control-sm" id="exampleInputEmail1" name="companyname" onChange={handleChange} placeholder="Company Name..." />
               <input type="text" class="form-control-sm" id="exampleInputtext1" name="companywebsite" onChange={handleChange} placeholder="Website..." />
               <input type="text" class="form-control-sm" id="exampleInputtext1" name="companyphonenumber" onChange={handleChange} placeholder="Phone no..." />
