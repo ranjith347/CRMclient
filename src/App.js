@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import axios from "axios";
+import Home from "./components/pages/Home";
+import Login from "./components/auth/Login";
+import { ToastContainer, toast } from "react-toastify";
+import { baseurl } from "./config";
+import "react-toastify/dist/ReactToastify.css";
+import "./App.css";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Router>
+        <ToastContainer
+          position="top-right"
+          autoClose={2500}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss={false}
+          draggable
+          theme={"colored"}
+        />
+        <Routes>
+          <Route exact path="/" element={<Login />} />
+
+          <Route path="/home" element={<Home />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
-
-export default App;
