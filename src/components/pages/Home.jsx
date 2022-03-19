@@ -90,9 +90,6 @@ export default function Home() {
   };
 
 
-  useEffect(() => {
-      getCompanies()
-  }, [])
   
 
   const columns = [
@@ -174,8 +171,27 @@ export default function Home() {
     let token = localStorage.getItem("auth-token");
     if (token == "") {
       navigate("../", { replace: true });
+      
     }
-    return () => {};
+
+     axios
+      .post(baseurl + "users/tokenIsValid", null, {
+        headers: { "x-auth-token": token },
+      })
+      .then(
+        (res) => {
+          console.log(res);
+          if (res.data == true) {
+            getCompanies()
+          }
+        },
+        (err) => {
+          navigate("../", { replace: true });
+
+          console.log(err);
+        }
+      );
+   
   }, []);
   const [AllUsers, setAllUsers] = useState([]);
   const getUsers = () => {
